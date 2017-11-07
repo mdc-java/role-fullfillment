@@ -1,0 +1,61 @@
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+    http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2"
+>
+
+	<managed-bean>
+		<managed-bean-name>autoCompleteView</managed-bean-name>
+		<managed-bean-class>view.AutoCompleteView</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>buttonView</managed-bean-name>
+		<managed-bean-class>view.ButtonView</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>commandButtonView</managed-bean-name>
+		<managed-bean-class>view.CommandButtonView</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>pickListView</managed-bean-name>
+		<managed-bean-class>view.PickListView</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+		<managed-property>
+			<property-name>service</property-name>
+			<property-class>service.SampleService</property-class>
+			<value>#{sampleService}</value>
+		</managed-property>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>sampleService</managed-bean-name>
+		<managed-bean-class>service.SampleService</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>tabView</managed-bean-name>
+		<managed-bean-class>view.TabView</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>dataTableView</managed-bean-name>
+		<managed-bean-class>view.DataTableView</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>confirmDialogView</managed-bean-name>
+		<managed-bean-class>view.ConfirmDialogView</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+
+</faces-config>

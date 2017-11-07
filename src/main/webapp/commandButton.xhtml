@@ -1,0 +1,26 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h:form>
+		<p:growl id="growl" life="1000" />
+
+		<p:commandButton 
+			value="Ajax Submit" 
+			id="ajax" 
+			update="growl"
+			actionListener="#{commandButtonView.buttonAction}" />
+
+		<p:commandButton 
+			value="Non-Ajax Submit" 
+			id="nonAjax"
+			actionListener="#{commandButtonView.buttonAction}" 
+			ajax="false" />
+		
+		#{commandButtonView.date}
+	</h:form>
+</h:body>
+</html>
