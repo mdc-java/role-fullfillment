@@ -5,21 +5,28 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.SelectEvent;
 import org.primefaces.event.TransferEvent;
 import org.primefaces.event.UnselectEvent;
 import org.primefaces.model.DualListModel;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import service.SampleService;
  
-@ManagedBean
+//import javax.faces.bean.ManagedBean;
+//annotations don't work due to jetty embedded server; must use faces-config.xml
+//annotation default name property is same as class name in camel case
+//@ManagedBean(name = "name")
+//@ManagedBean
+@SuppressWarnings("restriction")
+@Component
 public class PickListView {
      
-    @ManagedProperty("#{sampleService}")
+    //@ManagedProperty("#{sampleService}")
+    @Autowired
     private SampleService service;
      
     private DualListModel<String> samples;    

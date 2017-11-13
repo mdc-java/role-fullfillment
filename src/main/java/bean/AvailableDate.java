@@ -1,5 +1,8 @@
 package bean;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class AvailableDate {
 
 	private boolean monday;

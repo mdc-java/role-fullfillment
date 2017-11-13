@@ -7,14 +7,27 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+	<repositories>
+		<!-- repository to locate objectDB dependencies -->
+        <repository>
+            <id>objectdb</id>
+            <name>ObjectDB Repository</name>
+            <url>http://m2.objectdb.com</url>
+        </repository>            
+    </repositories>
+    
 	<properties>
 		<primefaces.version>6.1</primefaces.version>
 		<jsf.version>2.2.14</jsf.version>
 		<jsf.themes.version>1.0.8</jsf.themes.version>
+		<spring.version>5.0.1.RELEASE</spring.version>
+		<objectdb.version>2.6.3</objectdb.version>
+		<javax.persistence.version>2.1.0</javax.persistence.version>
+		<jta.version>1.1</jta.version>
 	</properties>
 
 	<dependencies>
-		<!-- Primefaces dependencies -->
+		<!-- ############################################ Primefaces dependencies -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
@@ -25,9 +38,8 @@
     		<artifactId>all-themes</artifactId>
 			<version>${jsf.themes.version}</version>
 		</dependency>
-
-
-		<!-- JSF dependencies -->
+		
+		<!-- ############################################ JSF dependencies -->		
 		<dependency>
 			<groupId>com.sun.faces</groupId>
 			<artifactId>jsf-api</artifactId>
@@ -38,11 +50,51 @@
 			<artifactId>jsf-impl</artifactId>
 			<version>${jsf.version}</version>
 		</dependency>
-
+		
+		<!-- ############################################ Spring dependencies -->
+		<!-- MVC; core (DI) and context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- transaction support dependency -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- persistence support dependency -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>		
+		
+		<!-- ############################################ objectDB dependencies -->
+		<!-- from version 2.6.3 it doesn't include JPA and JTA -->
+		<dependency>
+            <groupId>com.objectdb</groupId>
+            <artifactId>objectdb</artifactId>
+            <version>${objectdb.version}</version>
+        </dependency>
+        <!-- JPA -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>${javax.persistence.version}</version>
+        </dependency>
+        <!-- JTA -->
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>${jta.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- jetty plugin is just an embedded web server -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>

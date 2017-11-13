@@ -2,9 +2,13 @@ package bean;
 
 import java.util.Date;
 
+import javax.persistence.Id;
+
 public class CandidateProposal {
 
+	@Id
 	private int roleId;
+	@Id
 	private String candidate;
 	private String interviewer;
 	private String candidateStatus;

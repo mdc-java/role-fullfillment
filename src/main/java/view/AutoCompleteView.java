@@ -3,9 +3,14 @@ package view;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.faces.bean.ManagedBean;
+import org.springframework.stereotype.Component;
  
-@ManagedBean
+//import javax.faces.bean.ManagedBean;
+//annotations don't work due to jetty embedded server; must use faces-config.xml
+//annotation default name property is same as class name in camel case
+//@ManagedBean(name = "name")
+//@ManagedBean
+@Component
 public class AutoCompleteView {
      
     private String txt1;

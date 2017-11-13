@@ -3,8 +3,13 @@ package bean;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class CandidateRequest {
 
+	@Id
 	private int roleId;
 	private String capability;
 	private String account;
